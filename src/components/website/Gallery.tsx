@@ -5,35 +5,26 @@ import Image from "next/image";
 import { useScrollReveal } from "./useScrollReveal";
 
 const defaultGalleryItems = [
-  { src: "/images/gallery1.jpg", caption: "Wedding Ceremony", col: "col-span-2", row: "row-span-2" },
-  { src: "/images/gallery2.jpg", caption: "Pre-Wedding Shoot", col: "col-span-1", row: "row-span-1" },
-  { src: "/images/gallery3.jpg", caption: "Cinematic Moments", col: "col-span-1", row: "row-span-1" },
-  { src: "/images/gallery4.jpg", caption: "Aerial Coverage", col: "col-span-1", row: "row-span-2" },
-  { src: "/images/gallery5.jpg", caption: "Candid Photography", col: "col-span-1", row: "row-span-1" },
-  { src: "/images/gallery6.jpg", caption: "Album Design", col: "col-span-2", row: "row-span-1" },
+  { src: "/images/gallery1.jpg", caption: "Wedding Ceremony" },
+  { src: "/images/gallery2.jpg", caption: "Pre-Wedding Shoot" },
+  { src: "/images/gallery3.jpg", caption: "Cinematic Moments" },
+  { src: "/images/gallery4.jpg", caption: "Aerial Coverage" },
+  { src: "/images/gallery5.jpg", caption: "Candid Photography" },
+  { src: "/images/gallery6.jpg", caption: "Album Design" },
 ];
 
 interface GalleryImageItem {
   src: string;
   alt?: string | null;
-  span?: string | null;
   title?: string;
-}
-
-function mapSpan(span?: string | null) {
-  if (!span) return { col: "col-span-1", row: "row-span-1" };
-  if (span.includes("col-span-2") && span.includes("row-span-2")) return { col: "col-span-2", row: "row-span-2" };
-  if (span.includes("col-span-2")) return { col: "col-span-2", row: "row-span-1" };
-  if (span.includes("row-span-2")) return { col: "col-span-1", row: "row-span-2" };
-  return { col: "col-span-1", row: "row-span-1" };
 }
 
 export default function Gallery({ initialImages }: { initialImages?: GalleryImageItem[] }) {
   const galleryItems = initialImages?.length
-    ? initialImages.map((img) => {
-        const { col, row } = mapSpan(img.span);
-        return { src: img.src, caption: img.alt || img.title || "", col, row };
-      })
+    ? initialImages.map((img) => ({
+        src: img.src,
+        caption: img.alt || img.title || "",
+      }))
     : defaultGalleryItems;
   const [lightbox, setLightbox] = useState<number | null>(null);
   const sectionRef = useScrollReveal();
@@ -67,11 +58,11 @@ export default function Gallery({ initialImages }: { initialImages?: GalleryImag
           <div className="w-20 h-0.5 bg-gold mx-auto" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 auto-rows-[180px] md:auto-rows-[220px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[200px] md:auto-rows-[260px]">
           {galleryItems.map((item, i) => (
             <div
               key={i}
-              className={`${item.col} ${item.row} relative overflow-hidden group cursor-pointer`}
+              className="relative overflow-hidden group cursor-pointer"
               onClick={() => setLightbox(i)}
             >
               <Image
