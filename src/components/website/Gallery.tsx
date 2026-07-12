@@ -5,18 +5,15 @@ import Image from "next/image";
 import { useScrollReveal } from "./useScrollReveal";
 
 const defaultGalleryItems = [
-  { src: "/images/gallery1.jpg", caption: "Wedding Ceremony" },
-  { src: "/images/gallery2.jpg", caption: "Pre-Wedding Shoot" },
-  { src: "/images/gallery3.jpg", caption: "Cinematic Moments" },
-  { src: "/images/gallery4.jpg", caption: "Aerial Coverage" },
-  { src: "/images/gallery5.jpg", caption: "Candid Photography" },
-  { src: "/images/gallery6.jpg", caption: "Album Design" },
   { src: "/images/unnamed.webp", caption: "Wedding Moments" },
   { src: "/images/unnamed (1).webp", caption: "Beautiful Portraits" },
   { src: "/images/unnamed (2).webp", caption: "Celebrations" },
   { src: "/images/unnamed (3).webp", caption: "Traditional Ceremony" },
   { src: "/images/unnamed (4).webp", caption: "Joyful Moments" },
   { src: "/images/unnamed (5).webp", caption: "Elegant Details" },
+  { src: "/images/unnamed (6).webp", caption: "Love Story" },
+  { src: "/images/unnamed (7).webp", caption: "Grand Celebrations" },
+  { src: "/images/unnamed (8).webp", caption: "Timeless Memories" },
 ];
 
 interface GalleryImageItem {
