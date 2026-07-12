@@ -4,7 +4,10 @@ import { requireAuth } from "@/lib/api-auth";
 
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const auth = await requireAuth();
-  if (auth) return auth;
+  if (!auth) return auth;
+  if (auth.role !== "admin") {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  }
 
   try {
     const { id } = await params;
@@ -18,14 +21,18 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     };
     const contact = await prisma.contactSubmission.update({ where: { id }, data });
     return NextResponse.json(contact);
-  } catch {
+  } catch (error) {
+    console.error("Failed to update contact:", error);
     return NextResponse.json({ error: "Failed to update contact" }, { status: 500 });
   }
 }
 
 export async function DELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const auth = await requireAuth();
-  if (auth) return auth;
+  if (!auth) return auth;
+  if (auth.role !== "admin") {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  }
 
   try {
     const { id } = await params;
@@ -35,7 +42,8 @@ export async function DELETE(_request: NextRequest, { params }: { params: Promis
     }
     await prisma.contactSubmission.delete({ where: { id } });
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (error) {
+    console.error("Failed to delete contact:", error);
     return NextResponse.json({ error: "Failed to delete contact" }, { status: 500 });
   }
 }

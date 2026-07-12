@@ -85,14 +85,6 @@ export default function Gallery({ initialImages }: { initialImages?: GalleryImag
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a
-            href="/gallery"
-            className="inline-block border border-gold text-gold font-semibold px-10 py-3 hover:bg-gold hover:text-dark transition-all duration-300"
-          >
-            View Full Gallery
-          </a>
-        </div>
       </div>
 
       {lightbox !== null && (
