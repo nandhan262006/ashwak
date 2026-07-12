@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Wedding by Kranthi",
     images: [
       {
-        url: "/images/unnamed (6).webp",
+        url: "/images/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Wedding by Kranthi - Professional Wedding Photography in Nellore",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Wedding by Kranthi | Best Wedding Photography in Nellore",
     description:
       "Nellore's premier wedding photography and videography studio. Capturing timeless moments with artistry and emotion.",
-    images: ["/images/unnamed (6).webp"],
+    images: ["/images/og-image.webp"],
   },
   alternates: {
     canonical: "/",

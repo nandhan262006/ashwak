@@ -8,7 +8,7 @@ export default function JsonLd() {
     url: "https://weddingbykranthi.vercel.app",
     telephone: "+919885947958",
     email: "info@kranthiphotography.in",
-    image: "https://weddingbykranthi.vercel.app/images/unnamed (6).webp",
+    image: "https://weddingbykranthi.vercel.app/images/og-image.webp",
     logo: "https://weddingbykranthi.vercel.app/images/navibar.png",
     address: {
       "@type": "PostalAddress",

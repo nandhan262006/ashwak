@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Services - Wedding by Kranthi",
     description: "Wedding photography and videography services in Nellore. Candid, traditional, cinematic, pre-wedding, drone coverage, and album design.",
-    images: ["/images/unnamed (6).webp"],
+    images: ["/images/og-image.webp"],
   },
   alternates: {
     canonical: "/services",

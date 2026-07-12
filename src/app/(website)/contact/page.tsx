@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Wedding by Kranthi",
     description: "Get in touch for your wedding photography and videography needs in Nellore. Call +91 98859 47958.",
-    images: ["/images/unnamed (6).webp"],
+    images: ["/images/og-image.webp"],
   },
   alternates: {
     canonical: "/contact",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Wedding by Kranthi",
     description: "With over a decade of experience capturing love stories across Nellore and beyond. Wedding photography specialists in candid, traditional, and cinematic styles.",
-    images: ["/images/unnamed (6).webp"],
+    images: ["/images/og-image.webp"],
   },
   alternates: {
     canonical: "/about",
