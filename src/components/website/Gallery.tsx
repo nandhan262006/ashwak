@@ -11,6 +11,9 @@ const defaultGalleryItems = [
   { src: "/images/gallery4.jpg", caption: "Aerial Coverage" },
   { src: "/images/gallery5.jpg", caption: "Candid Photography" },
   { src: "/images/gallery6.jpg", caption: "Album Design" },
+  { src: "/images/unnamed.webp", caption: "Wedding Moments" },
+  { src: "/images/unnamed (1).webp", caption: "Beautiful Portraits" },
+  { src: "/images/unnamed (2).webp", caption: "Celebrations" },
 ];
 
 interface GalleryImageItem {
