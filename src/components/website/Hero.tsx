@@ -24,7 +24,15 @@ export default function Hero() {
           src="/images/homepage1.png"
           alt="Wedding photography"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center hidden md:block"
+          priority
+          sizes="100vw"
+        />
+        <Image
+          src="/homepagemobile.png"
+          alt="Wedding photography"
+          fill
+          className="object-cover object-center md:hidden"
           priority
           sizes="100vw"
         />
