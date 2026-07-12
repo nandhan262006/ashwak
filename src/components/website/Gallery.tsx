@@ -67,11 +67,11 @@ export default function Gallery({ initialImages }: { initialImages?: GalleryImag
           <div className="w-20 h-0.5 bg-gold mx-auto" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 auto-rows-[180px] md:auto-rows-[220px]">
           {galleryItems.map((item, i) => (
             <div
               key={i}
-              className={`${item.col} ${item.row} relative overflow-hidden group cursor-pointer gold-border`}
+              className={`${item.col} ${item.row} relative overflow-hidden group cursor-pointer`}
               onClick={() => setLightbox(i)}
             >
               <Image
