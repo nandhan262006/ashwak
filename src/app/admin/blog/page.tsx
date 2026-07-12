@@ -19,8 +19,10 @@ export default function BlogPage() {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     let ignore = false;
     fetch("/api/admin/blog").then((r) => r.json()).then((data) => {
       if (!ignore) setPosts(data);
@@ -56,6 +58,7 @@ export default function BlogPage() {
           <Button size="sm">Add Post</Button>
         </Link>
       </div>
+      {mounted && (
       <Table>
         <TableHead>
           <TableHeadCell>Title</TableHeadCell>
@@ -79,6 +82,7 @@ export default function BlogPage() {
           ))}
         </TableBody>
       </Table>
+      )}
       <DeleteConfirm open={!!deleteId} onClose={() => setDeleteId(null)} onConfirm={handleDelete} title="Delete this post?" loading={loading} />
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </div>

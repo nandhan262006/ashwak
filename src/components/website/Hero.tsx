@@ -32,9 +32,9 @@ export default function Hero() {
           src="/images/homepage1mobile.png"
           alt="Wedding photography"
           fill
-          className="object-cover object-center md:hidden"
+          className="object-contain object-center md:hidden"
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 0px"
         />
       </div>
 

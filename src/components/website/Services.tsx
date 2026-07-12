@@ -5,12 +5,12 @@ import Image from "next/image";
 import { useScrollReveal } from "./useScrollReveal";
 
 const defaultServices = [
-  { title: "Wedding Photography", image: "/images/gallery1.jpg", desc: "Capturing every precious moment of your special day with artistic excellence." },
-  { title: "Pre-Wedding Shoots", image: "/images/gallery2.jpg", desc: "Romantic and creative pre-wedding sessions at stunning locations." },
-  { title: "Cinematic Videography", image: "/images/gallery3.jpg", desc: "Movie-like wedding films that bring your story to life." },
-  { title: "Drone Coverage", image: "/images/gallery4.jpg", desc: "Aerial perspectives that add a grand dimension to your celebrations." },
-  { title: "Candid Photography", image: "/images/gallery5.jpg", desc: "Natural, unposed moments that reflect genuine emotions." },
-  { title: "Album Design", image: "/images/gallery6.jpg", desc: "Beautifully crafted albums that preserve your memories forever." },
+  { title: "Wedding Photography", image: "/images/unnamed.webp", desc: "Capturing every precious moment of your special day with artistic excellence." },
+  { title: "Pre-Wedding Shoots", image: "/images/unnamed (1).webp", desc: "Romantic and creative pre-wedding sessions at stunning locations." },
+  { title: "Cinematic Videography", image: "/images/unnamed (2).webp", desc: "Movie-like wedding films that bring your story to life." },
+  { title: "Drone Coverage", image: "/images/unnamed (3).webp", desc: "Aerial perspectives that add a grand dimension to your celebrations." },
+  { title: "Candid Photography", image: "/images/unnamed (4).webp", desc: "Natural, unposed moments that reflect genuine emotions." },
+  { title: "Album Design", image: "/images/unnamed (5).webp", desc: "Beautifully crafted albums that preserve your memories forever." },
 ];
 
 interface ServiceItem {
@@ -43,7 +43,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
   const services = initialServices?.length
     ? initialServices.map((s) => ({
         title: s.title,
-        image: s.image || "/images/gallery1.jpg",
+        image: s.image || "/images/unnamed.webp",
         desc: s.description || s.subtitle || "",
       }))
     : defaultServices;
@@ -112,13 +112,13 @@ export default function Services({ initialServices }: { initialServices?: Servic
               style={getCardStyle(i, active, total)}
               onClick={() => goTo(i)}
             >
-              <div className="bg-dark-card/90 backdrop-blur-sm gold-border gold-glow overflow-hidden">
+              <div className="bg-dark-card/90 backdrop-blur-sm gold-border gold-glow">
                 <div className="relative h-80">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     sizes="320px"
                   />
                 </div>

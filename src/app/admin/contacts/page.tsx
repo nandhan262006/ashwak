@@ -23,8 +23,10 @@ export default function ContactsPage() {
   const [viewContact, setViewContact] = useState<Contact | null>(null);
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     let ignore = false;
     fetch("/api/admin/contacts").then((r) => r.json()).then((data) => {
       if (!ignore) setContacts(data);
@@ -65,31 +67,33 @@ export default function ContactsPage() {
   return (
     <div>
       <h1 className="mb-4 text-2xl font-bold text-white">Contact Submissions</h1>
-      <Table>
-        <TableHead>
-          <TableHeadCell>Name</TableHeadCell>
-          <TableHeadCell>Email</TableHeadCell>
-          <TableHeadCell>Event Type</TableHeadCell>
-          <TableHeadCell>Status</TableHeadCell>
-          <TableHeadCell>Actions</TableHeadCell>
-        </TableHead>
-        <TableBody>
-          {contacts.map((c) => (
-            <TableRow key={c.id}>
-              <TableCell>{c.name}</TableCell>
-              <TableCell>{c.email}</TableCell>
-              <TableCell>{c.eventType || "-"}</TableCell>
-              <TableCell>
-                {c.isRead ? <Badge color="success">Read</Badge> : <Badge color="warning">Unread</Badge>}
-              </TableCell>
-              <TableCell className="flex gap-2">
-                <Button size="xs" color="info" onClick={() => { setViewContact(c); if (!c.isRead) markRead(c.id); }}>View</Button>
-                <Button size="xs" color="failure" onClick={() => setDeleteId(c.id)}>Delete</Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      {mounted && (
+        <Table>
+          <TableHead>
+            <TableHeadCell>Name</TableHeadCell>
+            <TableHeadCell>Email</TableHeadCell>
+            <TableHeadCell>Event Type</TableHeadCell>
+            <TableHeadCell>Status</TableHeadCell>
+            <TableHeadCell>Actions</TableHeadCell>
+          </TableHead>
+          <TableBody>
+            {contacts.map((c) => (
+              <TableRow key={c.id}>
+                <TableCell>{c.name}</TableCell>
+                <TableCell>{c.email}</TableCell>
+                <TableCell>{c.eventType || "-"}</TableCell>
+                <TableCell>
+                  {c.isRead ? <Badge color="success">Read</Badge> : <Badge color="warning">Unread</Badge>}
+                </TableCell>
+                <TableCell className="flex gap-2">
+                  <Button size="xs" color="info" onClick={() => { setViewContact(c); if (!c.isRead) markRead(c.id); }}>View</Button>
+                  <Button size="xs" color="failure" onClick={() => setDeleteId(c.id)}>Delete</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      )}
 
       <DeleteConfirm open={!!deleteId} onClose={() => setDeleteId(null)} onConfirm={handleDelete} title="Delete this contact?" loading={loading} />
 

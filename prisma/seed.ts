@@ -25,12 +25,12 @@ async function main() {
 
   // ── Services ──
   const services = [
-    { title: "Wedding Photography", subtitle: "Traditional & Modern", description: "We capture every precious moment of your special day — from the bridal preparations to the final farewell. Our blend of traditional and modern photography ensures your wedding story is told with elegance and authenticity.", image: "/images/gallery1.jpg", sortOrder: 1 },
-    { title: "Pre-Wedding Shoots", subtitle: "Romantic & Creative", description: "Celebrate your love story before the big day. Our pre-wedding shoots are designed to reflect your personality — whether it's a dreamy outdoor session or a fun urban adventure across Nellore's iconic locations.", image: "/images/gallery2.jpg", sortOrder: 2 },
-    { title: "Cinematic Videography", subtitle: "Movie-Like Wedding Films", description: "From highlight reels to full-length wedding films, our cinematic approach transforms your wedding into a visual masterpiece. Drone aerials, slow-motion, and storytelling edits that bring your memories to life.", image: "/images/gallery3.jpg", sortOrder: 3 },
-    { title: "Candid Photography", subtitle: "Natural & Unposed", description: "The best moments are the ones you don't pose for. Our candid photography captures genuine emotions — laughter, tears, joy — creating a raw and authentic visual narrative of your celebration.", image: "/images/gallery4.jpg", sortOrder: 4 },
-    { title: "Drone Coverage", subtitle: "Aerial Perspectives", description: "Add a grand dimension to your wedding with stunning aerial shots. Our licensed drone operators capture sweeping views of your venue, baraat procession, and outdoor celebrations.", image: "/images/gallery5.jpg", sortOrder: 5 },
-    { title: "Album Design", subtitle: "Timeless Keepsakes", description: "Beautifully crafted wedding albums that become family heirlooms. We design custom layouts with premium printing, ensuring your favourite moments are preserved for generations.", image: "/images/gallery6.jpg", sortOrder: 6 },
+    { title: "Wedding Photography", subtitle: "Traditional & Modern", description: "We capture every precious moment of your special day — from the bridal preparations to the final farewell. Our blend of traditional and modern photography ensures your wedding story is told with elegance and authenticity.", image: "/images/unnamed.webp", sortOrder: 1 },
+    { title: "Pre-Wedding Shoots", subtitle: "Romantic & Creative", description: "Celebrate your love story before the big day. Our pre-wedding shoots are designed to reflect your personality — whether it's a dreamy outdoor session or a fun urban adventure across Nellore's iconic locations.", image: "/images/unnamed (1).webp", sortOrder: 2 },
+    { title: "Cinematic Videography", subtitle: "Movie-Like Wedding Films", description: "From highlight reels to full-length wedding films, our cinematic approach transforms your wedding into a visual masterpiece. Drone aerials, slow-motion, and storytelling edits that bring your memories to life.", image: "/images/unnamed (2).webp", sortOrder: 3 },
+    { title: "Candid Photography", subtitle: "Natural & Unposed", description: "The best moments are the ones you don't pose for. Our candid photography captures genuine emotions — laughter, tears, joy — creating a raw and authentic visual narrative of your celebration.", image: "/images/unnamed (4).webp", sortOrder: 4 },
+    { title: "Drone Coverage", subtitle: "Aerial Perspectives", description: "Add a grand dimension to your wedding with stunning aerial shots. Our licensed drone operators capture sweeping views of your venue, baraat procession, and outdoor celebrations.", image: "/images/unnamed (3).webp", sortOrder: 5 },
+    { title: "Album Design", subtitle: "Timeless Keepsakes", description: "Beautifully crafted wedding albums that become family heirlooms. We design custom layouts with premium printing, ensuring your favourite moments are preserved for generations.", image: "/images/unnamed (5).webp", sortOrder: 6 },
   ];
 
   for (const s of services) {
@@ -40,12 +40,15 @@ async function main() {
 
   // ── Gallery Images ──
   const galleryImages = [
-    { title: "Wedding Ceremony", src: "/images/gallery1.jpg", alt: "Beautiful wedding ceremony captured in golden light", span: "col-span-2 row-span-2", sortOrder: 1 },
-    { title: "Pre-Wedding Shoot", src: "/images/gallery2.jpg", alt: "Romantic pre-wedding photography session", span: "col-span-1 row-span-1", sortOrder: 2 },
-    { title: "Cinematic Moments", src: "/images/gallery3.jpg", alt: "Cinematic wedding videography still", span: "col-span-1 row-span-1", sortOrder: 3 },
-    { title: "Aerial Coverage", src: "/images/gallery4.jpg", alt: "Drone aerial view of wedding venue", span: "col-span-1 row-span-2", sortOrder: 4 },
-    { title: "Candid Photography", src: "/images/gallery5.jpg", alt: "Candid moment between bride and groom", span: "col-span-1 row-span-1", sortOrder: 5 },
-    { title: "Album Design", src: "/images/gallery6.jpg", alt: "Premium wedding album layout", span: "col-span-2 row-span-1", sortOrder: 6 },
+    { title: "Wedding Moments", src: "/images/unnamed.webp", alt: "Wedding Moments", sortOrder: 1 },
+    { title: "Beautiful Portraits", src: "/images/unnamed (1).webp", alt: "Beautiful Portraits", sortOrder: 2 },
+    { title: "Celebrations", src: "/images/unnamed (2).webp", alt: "Celebrations", sortOrder: 3 },
+    { title: "Traditional Ceremony", src: "/images/unnamed (3).webp", alt: "Traditional Ceremony", sortOrder: 4 },
+    { title: "Joyful Moments", src: "/images/unnamed (4).webp", alt: "Joyful Moments", sortOrder: 5 },
+    { title: "Elegant Details", src: "/images/unnamed (5).webp", alt: "Elegant Details", sortOrder: 6 },
+    { title: "Love Story", src: "/images/unnamed (6).webp", alt: "Love Story", sortOrder: 7 },
+    { title: "Grand Celebrations", src: "/images/unnamed (7).webp", alt: "Grand Celebrations", sortOrder: 8 },
+    { title: "Timeless Memories", src: "/images/unnamed (8).webp", alt: "Timeless Memories", sortOrder: 9 },
   ];
 
   for (const g of galleryImages) {
@@ -58,7 +61,7 @@ async function main() {
     data: {
       title: "About Wedding by Kranthi",
       content: "With over a decade of experience capturing love stories across Nellore and beyond, Wedding by Kranthi brings artistry and emotion to every frame. We specialize in candid, traditional, and cinematic wedding photography that tells your unique story. From intimate ceremonies to grand celebrations, we believe every couple deserves a timeless visual narrative of their most cherished day. Our team combines technical expertise with a deep understanding of Indian wedding traditions to deliver photographs and films that you'll treasure for generations.",
-      image: "/images/gallery1.jpg",
+      image: "/images/unnamed.webp",
       tags: "Candid,Traditional,Cinematic,Pre-Wedding,Drone",
     },
   });

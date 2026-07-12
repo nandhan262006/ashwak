@@ -29,7 +29,7 @@ export default function About({ data }: { data?: AboutData | null }) {
     ? data.tags.split(",").map((t) => t.trim()).filter(Boolean)
     : tags;
   const displayContent = data?.content || "With over a decade of experience capturing love stories across Nellore and beyond, Wedding by Kranthi brings artistry and emotion to every frame. We specialize in candid, traditional, and cinematic wedding photography that tells your unique story. From intimate ceremonies to grand celebrations, we believe every couple deserves a timeless visual narrative of their most cherished day. Our team combines technical expertise with a deep understanding of Indian wedding traditions to deliver photographs and films that you'll treasure for generations.";
-  const displayImage = data?.image || "/images/gallery1.jpg";
+  const displayImage = data?.image || "/images/unnamed.webp";
 
   return (
     <section

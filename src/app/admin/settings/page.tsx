@@ -17,8 +17,10 @@ export default function SettingsPage() {
   const [editValue, setEditValue] = useState("");
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     let ignore = false;
     fetch("/api/admin/settings").then((r) => r.json()).then((data) => {
       if (!ignore) setSettings(data);
@@ -68,24 +70,26 @@ export default function SettingsPage() {
         <h1 className="text-2xl font-bold text-white">Settings</h1>
         <Button size="sm" onClick={openAdd}>Add Setting</Button>
       </div>
-      <Table>
-        <TableHead>
-          <TableHeadCell>Key</TableHeadCell>
-          <TableHeadCell>Value</TableHeadCell>
-          <TableHeadCell>Actions</TableHeadCell>
-        </TableHead>
-        <TableBody>
-          {settings.map((s) => (
-            <TableRow key={s.id}>
-              <TableCell className="font-mono">{s.key}</TableCell>
-              <TableCell className="max-w-md truncate">{s.value || "-"}</TableCell>
-              <TableCell>
-                <Button size="xs" color="info" onClick={() => openEdit(s)}>Edit</Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      {mounted && (
+        <Table>
+          <TableHead>
+            <TableHeadCell>Key</TableHeadCell>
+            <TableHeadCell>Value</TableHeadCell>
+            <TableHeadCell>Actions</TableHeadCell>
+          </TableHead>
+          <TableBody>
+            {settings.map((s) => (
+              <TableRow key={s.id}>
+                <TableCell className="font-mono">{s.key}</TableCell>
+                <TableCell className="max-w-md truncate">{s.value || "-"}</TableCell>
+                <TableCell>
+                  <Button size="xs" color="info" onClick={() => openEdit(s)}>Edit</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      )}
 
       <Modal show={modalOpen} onClose={() => setModalOpen(false)}>
         <ModalHeader>{editKey ? "Edit Setting" : "Add Setting"}</ModalHeader>
