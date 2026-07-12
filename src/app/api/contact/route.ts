@@ -14,7 +14,7 @@ function isRateLimited(ip: string): boolean {
 
 function sanitize(str: unknown, max = 500): string {
   if (typeof str !== "string") return "";
-  return str.replace(/[<>"'&]/g, "").trim().slice(0, max);
+  return str.replace(/[<>"&]/g, "").trim().slice(0, max);
 }
 
 export async function POST(request: NextRequest) {

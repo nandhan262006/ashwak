@@ -99,3 +99,78 @@ body {
   background-color: #141414;
   border-color: rgba(212, 175, 55, 0.2);
 }
+
+/* Admin specific styles */
+.admin-card {
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.admin-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.admin-input {
+  background-color: #0c0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #F5F0E8;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.admin-input:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 1px #D4AF37;
+  outline: none;
+}
+
+.admin-btn-primary {
+  background: linear-gradient(to right, #D4AF37, #B8960E);
+  color: #0c0c0c;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: opacity 0.2s;
+}
+.admin-btn-primary:hover {
+  opacity: 0.9;
+}
+.admin-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #F5F0E8;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+.admin-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #D4AF37;
+}
+
+.admin-btn-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s;
+}
+.admin-btn-danger:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.admin-badge-success {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+.admin-badge-warning {
+  background-color: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+}
+.admin-badge-info {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}

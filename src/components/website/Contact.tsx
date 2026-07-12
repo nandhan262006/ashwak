@@ -150,10 +150,11 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-cream/50 text-xs uppercase tracking-wider mb-1.5">Email</label>
+                    <label className="block text-cream/50 text-xs uppercase tracking-wider mb-1.5">Email *</label>
                     <input
                       name="email"
                       type="email"
+                      required
                       className="w-full bg-dark-surface border border-cream/10 text-cream px-4 py-3 text-sm focus:border-gold focus:outline-none transition-colors"
                     />
                   </div>

@@ -65,7 +65,7 @@ export default function GoogleReviews() {
   const [reviews, setReviews] = useState<Review[]>(defaultReviews);
 
   useEffect(() => {
-    fetch("/api/admin/google-reviews")
+    fetch("/api/reviews")
       .then((r) => r.json())
       .then((data: unknown) => {
         if (!Array.isArray(data)) return;

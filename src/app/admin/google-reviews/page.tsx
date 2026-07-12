@@ -21,10 +21,8 @@ export default function GoogleReviewsPage() {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     let ignore = false;
     fetch("/api/admin/google-reviews").then((r) => r.json()).then((data) => {
       if (!ignore) setItems(data);
@@ -60,8 +58,7 @@ export default function GoogleReviewsPage() {
           <Button size="sm">Add Review</Button>
         </Link>
       </div>
-      {mounted && (
-        <Table>
+      <Table>
           <TableHead>
             <TableHeadCell>Name</TableHeadCell>
             <TableHeadCell>Rating</TableHeadCell>
@@ -84,7 +81,6 @@ export default function GoogleReviewsPage() {
             ))}
           </TableBody>
         </Table>
-      )}
       <DeleteConfirm open={!!deleteId} onClose={() => setDeleteId(null)} onConfirm={handleDelete} title="Delete this review?" loading={loading} />
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </div>

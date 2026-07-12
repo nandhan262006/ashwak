@@ -122,7 +122,7 @@ export default async function AboutPage() {
               { year: "2017", title: "Expanded to Videography", desc: "Added cinematic videography to capture not just moments, but entire love stories in motion." },
               { year: "2020", title: "Drone Coverage Added", desc: "Introduced aerial photography to bring grand perspectives to wedding celebrations." },
               { year: "2024", title: "500+ Weddings", desc: "Reached the milestone of capturing over 500 beautiful weddings across Andhra Pradesh." },
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.year} className="flex gap-6 items-start">
                 <div className="shrink-0 w-16 text-right">
                   <span className="text-gold font-semibold">{item.year}</span>

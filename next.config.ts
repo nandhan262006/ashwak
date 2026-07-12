@@ -19,7 +19,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://*.google.com https://*.googleapis.com https://*.gstatic.com",
+      "img-src 'self' data: blob: https://*.google.com https://*.googleapis.com https://*.gstatic.com https://*.cloudinary.com",
       "font-src 'self'",
       "connect-src 'self'",
       "frame-src https://www.google.com https://maps.google.com",
