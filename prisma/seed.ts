@@ -1,0 +1,137 @@
+import "dotenv/config";
+import path from "node:path";
+import { PrismaClient } from "@prisma/client";
+import { PrismaLibSql } from "@prisma/adapter-libsql";
+
+const rawUrl = process.env.TURSO_DATABASE_URL || process.env.DATABASE_URL!;
+const authToken = process.env.TURSO_AUTH_TOKEN;
+// Convert relative file: URL to absolute
+const url = rawUrl.startsWith("file:")
+  ? "file:" + path.resolve(process.cwd(), rawUrl.slice("file:".length))
+  : rawUrl;
+const adapter = new PrismaLibSql({ url, ...(authToken ? { authToken } : {}) });
+const prisma = new PrismaClient({ adapter });
+
+async function main() {
+  console.log("Seeding database...");
+
+  await prisma.siteSetting.deleteMany();
+  await prisma.service.deleteMany();
+  await prisma.galleryImage.deleteMany();
+  await prisma.googleReview.deleteMany();
+  await prisma.aboutSection.deleteMany();
+  await prisma.blogPost.deleteMany();
+  await prisma.testimonial.deleteMany();
+
+  // ── Services ──
+  const services = [
+    { title: "Wedding Photography", subtitle: "Traditional & Modern", description: "We capture every precious moment of your special day — from the bridal preparations to the final farewell. Our blend of traditional and modern photography ensures your wedding story is told with elegance and authenticity.", image: "/images/gallery1.jpg", sortOrder: 1 },
+    { title: "Pre-Wedding Shoots", subtitle: "Romantic & Creative", description: "Celebrate your love story before the big day. Our pre-wedding shoots are designed to reflect your personality — whether it's a dreamy outdoor session or a fun urban adventure across Nellore's iconic locations.", image: "/images/gallery2.jpg", sortOrder: 2 },
+    { title: "Cinematic Videography", subtitle: "Movie-Like Wedding Films", description: "From highlight reels to full-length wedding films, our cinematic approach transforms your wedding into a visual masterpiece. Drone aerials, slow-motion, and storytelling edits that bring your memories to life.", image: "/images/gallery3.jpg", sortOrder: 3 },
+    { title: "Candid Photography", subtitle: "Natural & Unposed", description: "The best moments are the ones you don't pose for. Our candid photography captures genuine emotions — laughter, tears, joy — creating a raw and authentic visual narrative of your celebration.", image: "/images/gallery4.jpg", sortOrder: 4 },
+    { title: "Drone Coverage", subtitle: "Aerial Perspectives", description: "Add a grand dimension to your wedding with stunning aerial shots. Our licensed drone operators capture sweeping views of your venue, baraat procession, and outdoor celebrations.", image: "/images/gallery5.jpg", sortOrder: 5 },
+    { title: "Album Design", subtitle: "Timeless Keepsakes", description: "Beautifully crafted wedding albums that become family heirlooms. We design custom layouts with premium printing, ensuring your favourite moments are preserved for generations.", image: "/images/gallery6.jpg", sortOrder: 6 },
+  ];
+
+  for (const s of services) {
+    await prisma.service.create({ data: s });
+  }
+  console.log(`✓ Seeded ${services.length} services`);
+
+  // ── Gallery Images ──
+  const galleryImages = [
+    { title: "Wedding Ceremony", src: "/images/gallery1.jpg", alt: "Beautiful wedding ceremony captured in golden light", span: "col-span-2 row-span-2", sortOrder: 1 },
+    { title: "Pre-Wedding Shoot", src: "/images/gallery2.jpg", alt: "Romantic pre-wedding photography session", span: "col-span-1 row-span-1", sortOrder: 2 },
+    { title: "Cinematic Moments", src: "/images/gallery3.jpg", alt: "Cinematic wedding videography still", span: "col-span-1 row-span-1", sortOrder: 3 },
+    { title: "Aerial Coverage", src: "/images/gallery4.jpg", alt: "Drone aerial view of wedding venue", span: "col-span-1 row-span-2", sortOrder: 4 },
+    { title: "Candid Photography", src: "/images/gallery5.jpg", alt: "Candid moment between bride and groom", span: "col-span-1 row-span-1", sortOrder: 5 },
+    { title: "Album Design", src: "/images/gallery6.jpg", alt: "Premium wedding album layout", span: "col-span-2 row-span-1", sortOrder: 6 },
+  ];
+
+  for (const g of galleryImages) {
+    await prisma.galleryImage.create({ data: g });
+  }
+  console.log(`✓ Seeded ${galleryImages.length} gallery images`);
+
+  // ── About Section ──
+  await prisma.aboutSection.create({
+    data: {
+      title: "About Wedding by Kranthi",
+      content: "With over a decade of experience capturing love stories across Nellore and beyond, Wedding by Kranthi brings artistry and emotion to every frame. We specialize in candid, traditional, and cinematic wedding photography that tells your unique story. From intimate ceremonies to grand celebrations, we believe every couple deserves a timeless visual narrative of their most cherished day. Our team combines technical expertise with a deep understanding of Indian wedding traditions to deliver photographs and films that you'll treasure for generations.",
+      image: "/images/gallery1.jpg",
+      tags: "Candid,Traditional,Cinematic,Pre-Wedding,Drone",
+    },
+  });
+  console.log("✓ Seeded about section");
+
+  // ── Google Reviews ──
+  const reviews = [
+    { name: "Priya & Rahul", text: "Kranthi captured our wedding beautifully. Every photo tells a story. The candid shots were absolutely stunning!", rating: 5, date: "December 2025", sortOrder: 1 },
+    { name: "Ananya & Vikram", text: "Best wedding photographer in Nellore! The cinematic video was beyond our expectations. Highly recommend!", rating: 5, date: "November 2025", sortOrder: 2 },
+    { name: "Meera & Arjun", text: "The pre-wedding shoot was magical. Kranthi has an incredible eye for detail and makes you feel so comfortable.", rating: 5, date: "October 2025", sortOrder: 3 },
+    { name: "Divya & Sanjay", text: "From candid moments to grand portraits, every frame was perfect. The drone shots added a whole new dimension!", rating: 5, date: "September 2025", sortOrder: 4 },
+    { name: "Lakshmi & Ravi", text: "Our wedding album is absolutely gorgeous. Kranthi truly knows how to capture emotions and beautiful moments.", rating: 5, date: "August 2025", sortOrder: 5 },
+    { name: "Swathi & Kiran", text: "Professional, creative, and passionate. The reception coverage was fantastic. We love every single photo!", rating: 5, date: "July 2025", sortOrder: 6 },
+    { name: "Nisha & Karthik", text: "The engagement shoot was so much fun! Kranthi made us feel like models. Beautiful timeless photos.", rating: 5, date: "June 2025", sortOrder: 7 },
+    { name: "Revathi & Suresh", text: "Incredible service from start to finish. The traditional ceremony coverage was breathtaking. Worth every rupee!", rating: 5, date: "May 2025", sortOrder: 8 },
+  ];
+
+  for (const r of reviews) {
+    await prisma.googleReview.create({ data: r });
+  }
+  console.log(`✓ Seeded ${reviews.length} Google reviews`);
+
+  // ── Site Settings ──
+  const settings = [
+    { key: "phone", value: "+91 98859 47958" },
+    { key: "email", value: "info@kranthiphotography.in" },
+    { key: "address", value: "Nellore, Andhra Pradesh, India" },
+    { key: "facebook", value: "https://www.facebook.com/krantiphotography" },
+    { key: "instagram", value: "" },
+    { key: "heroTitle", value: "Capturing Timeless Moments" },
+    { key: "heroSubtitle", value: "Nellore's Premier Wedding Photography & Videography Studio" },
+    { key: "seoTitle", value: "Wedding by Kranthi | Professional Wedding Photography in Nellore" },
+    { key: "seoDescription", value: "Nellore's premier wedding photography and videography studio. Capturing timeless moments with artistry, elegance, and passion." },
+    { key: "seoKeywords", value: "wedding photography Nellore, wedding videography Nellore, candid wedding photography, cinematic wedding video, pre-wedding shoot Nellore" },
+    { key: "footerText", value: "© 2026 Wedding by Kranthi. All rights reserved." },
+  ];
+
+  for (const s of settings) {
+    await prisma.siteSetting.create({ data: s });
+  }
+  console.log(`✓ Seeded ${settings.length} site settings`);
+
+  // ── Blog Posts ──
+  const posts = [
+    {
+      title: "Top 10 Wedding Photography Tips for Brides",
+      slug: "top-10-wedding-photography-tips",
+      excerpt: "Essential tips every bride should know before their wedding day to get the best photographs.",
+      content: "Your wedding day is one of the most photographed days of your life. Here are our top tips to make sure you look your best in every frame:\n\n1. Trust your photographer — we know the best angles and lighting.\n2. Take a moment alone together for intimate portraits.\n3. Don't skip the getting-ready shots.\n4. Let emotions flow naturally.\n5. Plan a golden hour session.\n6. Include family group shots in your timeline.\n7. Choose a venue with good natural light.\n8. Consider a first look moment.\n9. Don't forget the details — rings, shoes, décor.\n10. Enjoy every moment and be present.",
+      coverImage: "/images/gallery1.jpg",
+      isPublished: true,
+    },
+    {
+      title: "Why Candid Photography is Essential for Indian Weddings",
+      slug: "candid-photography-indian-weddings",
+      excerpt: "Discover why candid photography has become the must-have style for modern Indian weddings.",
+      content: "Indian weddings are full of unscripted moments — the mother's tears during vidaai, the groom's reaction to the bride's entry, the dance floor chaos at the sangeet. Candid photography captures these raw emotions without interrupting the flow of your celebration.\n\nUnlike traditional posed photography, candid shots tell a story. They preserve the energy, the laughter, the stolen glances. Years from now, these are the photos that will make you relive the day exactly as it happened.\n\nAt Wedding by Kranthi, we specialize in blending into the background while capturing every significant moment.",
+      coverImage: "/images/gallery5.jpg",
+      isPublished: true,
+    },
+  ];
+
+  for (const p of posts) {
+    await prisma.blogPost.create({ data: p });
+  }
+  console.log(`✓ Seeded ${posts.length} blog posts`);
+
+  console.log("\n✅ Database seeded successfully!");
+}
+
+main()
+  .catch((e) => {
+    console.error("Seed failed:", e);
+    process.exit(1);
+  })
+  .finally(() => prisma.$disconnect());

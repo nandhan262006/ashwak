@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold: #D4AF37;
+  --color-gold-light: #F0D060;
+  --color-gold-dark: #B8960E;
+  --color-dark: #0A0A0A;
+  --color-dark-card: #141414;
+  --color-dark-surface: #1A1A1A;
+  --color-cream: #F5F0E8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A0A0A;
+  color: #F5F0E8;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #D4AF37;
+  color: #0A0A0A;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #D4AF37, #F0D060, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.4) 0%,
+    rgba(10, 10, 10, 0.2) 40%,
+    rgba(10, 10, 10, 0.6) 80%,
+    rgba(10, 10, 10, 1) 100%
+  );
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.gold-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Flowbite dark theme overrides for admin */
+.dark .flowbite-table {
+  background-color: transparent;
+}
+.dark .flowbite-table thead {
+  background-color: #141414;
+}
+.dark .flowbite-table tbody tr {
+  background-color: #1a1a1a;
+  border-color: rgba(212, 175, 55, 0.1);
+}
+.dark .flowbite-table tbody tr:hover {
+  background-color: #141414;
+}
+.dark .flowbite-table td,
+.dark .flowbite-table th {
+  color: #F5F0E8;
+  border-color: rgba(212, 175, 55, 0.1);
+}
+.dark .flowbite-card {
+  background-color: #141414;
+  border-color: rgba(212, 175, 55, 0.2);
 }
