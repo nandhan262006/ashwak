@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: "With over a decade of experience capturing love stories across Nellore and beyond. Wedding photography specialists in candid, traditional, and cinematic styles.",
     images: ["/images/og-image.webp"],
   },
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 async function getAbout() {

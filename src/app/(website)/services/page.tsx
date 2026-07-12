@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description: "Wedding photography and videography services in Nellore. Candid, traditional, cinematic, pre-wedding, drone coverage, and album design.",
     images: ["/images/og-image.webp"],
   },
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 async function getServices() {

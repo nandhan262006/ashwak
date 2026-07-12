@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description: "Get in touch for your wedding photography and videography needs in Nellore. Call +91 98859 47958.",
     images: ["/images/og-image.webp"],
   },
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, and cinematic highlights from Nellore.",
     images: ["/images/og-image.webp"],
   },
+  alternates: {
+    canonical: "/gallery",
+  },
 };
 
 async function getGallery() {
