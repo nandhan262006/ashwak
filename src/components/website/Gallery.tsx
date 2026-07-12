@@ -14,6 +14,9 @@ const defaultGalleryItems = [
   { src: "/images/unnamed.webp", caption: "Wedding Moments" },
   { src: "/images/unnamed (1).webp", caption: "Beautiful Portraits" },
   { src: "/images/unnamed (2).webp", caption: "Celebrations" },
+  { src: "/images/unnamed (3).webp", caption: "Traditional Ceremony" },
+  { src: "/images/unnamed (4).webp", caption: "Joyful Moments" },
+  { src: "/images/unnamed (5).webp", caption: "Elegant Details" },
 ];
 
 interface GalleryImageItem {
