@@ -99,7 +99,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
         </div>
 
         <div
-          className="relative h-[540px] mx-auto max-w-4xl select-none overflow-hidden"
+          className="relative h-[540px] mx-auto max-w-4xl select-none"
           style={{ perspective: "1200px" }}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
