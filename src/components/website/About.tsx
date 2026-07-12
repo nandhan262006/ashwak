@@ -37,9 +37,9 @@ export default function About({ data }: { data?: AboutData | null }) {
       className="relative py-24 overflow-hidden"
     >
       <div
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0 opacity-25"
         style={{
-          backgroundImage: "url(/images/unnamed (8).webp)",
+          backgroundImage: "url('/images/unnamed%20(8).webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
