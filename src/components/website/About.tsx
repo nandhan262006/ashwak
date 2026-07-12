@@ -39,7 +39,7 @@ export default function About({ data }: { data?: AboutData | null }) {
       <div
         className="absolute inset-0 opacity-15"
         style={{
-          backgroundImage: "url(/images/about-bg.jpg)",
+          backgroundImage: "url(/images/unnamed (8).webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
