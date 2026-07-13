@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { HiBriefcase, HiPhoto, HiStar, HiEnvelope, HiDocumentText, HiUser } from "react-icons/hi2";
+import { HiBriefcase, HiPhoto, HiStar, HiEnvelope, HiUser } from "react-icons/hi2";
 import { Skeleton } from "@/components/admin/Skeleton";
 
 interface DashboardData {
@@ -13,7 +13,6 @@ interface DashboardData {
   galleryCount: number;
   googleReviews: { id: string; name: string; text: string; rating: number; date: string | null }[];
   reviewsCount: number;
-  blogPosts: { id: string; title: string; isPublished: boolean; createdAt: string }[];
   about: { title: string; content: string; image: string | null; tags: string | null } | null;
   contacts: { id: string; name: string; email: string; phone: string | null; date: string | null; eventType: string | null; message: string; isRead: boolean; createdAt: string }[];
   unreadContacts: number;
@@ -268,59 +267,8 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Bottom row */}
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Blog */}
-        <div className="bg-[#0A0A0A] border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.1] transition-colors">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
-                <HiDocumentText className="w-5 h-5 text-green-400" />
-              </div>
-              <h2 className="text-lg font-semibold text-white">Blog Posts</h2>
-            </div>
-            <Link href="/admin/blog" className="text-[#D4AF37] text-sm font-medium hover:underline underline-offset-4">
-              Manage
-            </Link>
-          </div>
-          {!data ? (
-            <div className="space-y-2">
-              {[...Array(3)].map((_, i) => (
-                <Skeleton key={i} className="h-12 rounded-xl" />
-              ))}
-            </div>
-          ) : data.blogPosts?.length > 0 ? (
-            <div className="space-y-2">
-              {data.blogPosts.map((p) => (
-                <Link
-                  key={p.id}
-                  href={`/admin/blog/${p.id}`}
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-[#D4AF37]/20 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-white text-sm font-medium truncate max-w-48">{p.title}</span>
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
-                      p.isPublished ? "bg-green-500/15 text-green-300" : "bg-yellow-500/15 text-yellow-300"
-                    }`}>
-                      {p.isPublished ? "Published" : "Draft"}
-                    </span>
-                  </div>
-                  <span className="text-white/20 text-xs shrink-0">{new Date(p.createdAt).toLocaleDateString()}</span>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <p className="text-white/20 text-sm">
-              No blog posts yet.{" "}
-              <Link href="/admin/blog/new" className="text-[#D4AF37] hover:underline">
-                Write one
-              </Link>
-            </p>
-          )}
-        </div>
-
-        {/* Contacts */}
-        <div className="bg-[#0A0A0A] border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.1] transition-colors">
+      {/* Contacts */}
+      <div className="bg-[#0A0A0A] border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.1] transition-colors">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center">
@@ -372,7 +320,6 @@ export default function AdminDashboard() {
             <p className="text-white/20 text-sm">No messages yet.</p>
           )}
         </div>
-      </div>
     </div>
   );
 }

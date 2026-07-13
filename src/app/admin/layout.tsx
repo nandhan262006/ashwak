@@ -3,7 +3,7 @@
 import { useEffect, useCallback, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { HiHome, HiBriefcase, HiPhoto, HiStar, HiUser, HiDocumentText, HiEnvelope, HiCog6Tooth, HiArrowRightOnRectangle, HiBars3, HiXMark, HiSparkles } from "react-icons/hi2";
+import { HiHome, HiBriefcase, HiPhoto, HiStar, HiUser, HiEnvelope, HiCog6Tooth, HiArrowRightOnRectangle, HiBars3, HiXMark, HiSparkles } from "react-icons/hi2";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: HiHome },
@@ -11,7 +11,6 @@ const navItems = [
   { href: "/admin/gallery", label: "Gallery", icon: HiPhoto },
   { href: "/admin/google-reviews", label: "Reviews", icon: HiStar },
   { href: "/admin/about", label: "About", icon: HiUser },
-  { href: "/admin/blog", label: "Blog", icon: HiDocumentText },
   { href: "/admin/contacts", label: "Contacts", icon: HiEnvelope },
   { href: "/admin/settings", label: "Settings", icon: HiCog6Tooth },
 ];
@@ -21,7 +20,6 @@ const breadcrumbMap: Record<string, string> = {
   "/admin/services": "Services",
   "/admin/gallery": "Gallery",
   "/admin/google-reviews": "Reviews",
-  "/admin/blog": "Blog",
   "/admin/about": "About",
   "/admin/contacts": "Contacts",
   "/admin/settings": "Settings",

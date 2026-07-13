@@ -30,17 +30,6 @@ model GalleryImage {
   updatedAt   DateTime @updatedAt
 }
 
-model Testimonial {
-  id        String   @id @default(cuid())
-  name      String
-  event     String
-  text      String
-  rating    Int      @default(5)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model AboutSection {
   id        String   @id @default(cuid())
   title     String
@@ -48,18 +37,6 @@ model AboutSection {
   image     String?
   tags      String?
   updatedAt DateTime @updatedAt
-}
-
-model BlogPost {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  excerpt     String?
-  content     String?
-  coverImage  String?
-  isPublished Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
 }
 
 model ContactSubmission {

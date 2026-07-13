@@ -27,15 +27,6 @@ export const googleReviewSchema = z.object({
   sortOrder: z.coerce.number().int().default(0),
 });
 
-export const blogPostSchema = z.object({
-  title: z.string().min(1).max(500),
-  slug: z.string().min(1).max(500).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Slug must be lowercase alphanumeric with hyphens"),
-  excerpt: z.string().max(1000).nullable().optional(),
-  content: z.string().max(50000).nullable().optional(),
-  coverImage: z.string().url().nullable().optional().or(z.literal("")),
-  isPublished: z.boolean().default(false),
-});
-
 export const aboutSectionSchema = z.object({
   title: z.string().min(1).max(500),
   content: z.string().min(1).max(10000),

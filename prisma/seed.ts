@@ -20,8 +20,7 @@ async function main() {
   await prisma.galleryImage.deleteMany();
   await prisma.googleReview.deleteMany();
   await prisma.aboutSection.deleteMany();
-  await prisma.blogPost.deleteMany();
-  await prisma.testimonial.deleteMany();
+  await prisma.contactSubmission.deleteMany();
 
   // ── Services ──
   const services = [
@@ -102,31 +101,6 @@ async function main() {
     await prisma.siteSetting.create({ data: s });
   }
   console.log(`✓ Seeded ${settings.length} site settings`);
-
-  // ── Blog Posts ──
-  const posts = [
-    {
-      title: "Top 10 Wedding Photography Tips for Brides",
-      slug: "top-10-wedding-photography-tips",
-      excerpt: "Essential tips every bride should know before their wedding day to get the best photographs.",
-      content: "Your wedding day is one of the most photographed days of your life. Here are our top tips to make sure you look your best in every frame:\n\n1. Trust your photographer — we know the best angles and lighting.\n2. Take a moment alone together for intimate portraits.\n3. Don't skip the getting-ready shots.\n4. Let emotions flow naturally.\n5. Plan a golden hour session.\n6. Include family group shots in your timeline.\n7. Choose a venue with good natural light.\n8. Consider a first look moment.\n9. Don't forget the details — rings, shoes, décor.\n10. Enjoy every moment and be present.",
-      coverImage: "/images/gallery1.jpg",
-      isPublished: true,
-    },
-    {
-      title: "Why Candid Photography is Essential for Indian Weddings",
-      slug: "candid-photography-indian-weddings",
-      excerpt: "Discover why candid photography has become the must-have style for modern Indian weddings.",
-      content: "Indian weddings are full of unscripted moments — the mother's tears during vidaai, the groom's reaction to the bride's entry, the dance floor chaos at the sangeet. Candid photography captures these raw emotions without interrupting the flow of your celebration.\n\nUnlike traditional posed photography, candid shots tell a story. They preserve the energy, the laughter, the stolen glances. Years from now, these are the photos that will make you relive the day exactly as it happened.\n\nAt Wedding by Kranthi, we specialize in blending into the background while capturing every significant moment.",
-      coverImage: "/images/gallery5.jpg",
-      isPublished: true,
-    },
-  ];
-
-  for (const p of posts) {
-    await prisma.blogPost.create({ data: p });
-  }
-  console.log(`✓ Seeded ${posts.length} blog posts`);
 
   console.log("\n✅ Database seeded successfully!");
 }
