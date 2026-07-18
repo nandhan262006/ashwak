@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "With over a decade of experience capturing love stories across Chirala and beyond, Ashwak Photography brings artistry and emotion to every frame.",
+    description: "With over a decade of experience capturing love stories across Chirala and beyond, Ashwak Photography brings artistry and emotion to every frame. We specialize in candid, traditional, and cinematic wedding photography that tells your unique story. From intimate ceremonies to grand celebrations, we believe every couple deserves a timeless visual narrative.",
   openGraph: {
     title: "About Ashwak Photography",
     description: "With over a decade of experience capturing love stories across Chirala and beyond. Wedding photography specialists in candid, traditional, and cinematic styles.",

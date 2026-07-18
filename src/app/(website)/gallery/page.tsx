@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, pre-wedding shoots, and cinematic highlights from Chirala.",
+  description: "Browse Ashwak Photography's stunning wedding photography gallery featuring candid moments, traditional ceremonies, grand celebrations, pre-wedding shoots, engagement sessions, and cinematic highlights from weddings across Chirala and Andhra Pradesh.",
   openGraph: {
     title: "Gallery - Ashwak Photography",
     description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, and cinematic highlights from Chirala.",

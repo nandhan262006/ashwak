@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore our wedding photography and videography services — candid, traditional, cinematic, pre-wedding, drone coverage, and album design in Chirala.",
+  description: "Explore Ashwak Photography's full range of wedding photography and videography services in Chirala — including wedding photography, engagement shoots, family portraits, kids and maternity photography, model portfolios, cinematic videography, drone aerial coverage, and premium album design.",
   openGraph: {
     title: "Our Services - Ashwak Photography",
     description: "Wedding photography and videography services in Chirala. Candid, traditional, cinematic, pre-wedding, drone coverage, and album design.",

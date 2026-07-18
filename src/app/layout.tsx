@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   formatDetection: { telephone: true, email: true },
   openGraph: {
     title: "Ashwak Photography | Wedding Photography in Chirala",
-    description: "Chirala's premier wedding photography and videography studio. Capturing timeless moments with artistry, elegance, and passion.",
+    description: "Ashwak Photography is Chirala's premier wedding photography and videography studio with over 11 years of experience. We specialize in candid, traditional, and cinematic wedding photography, pre-wedding shoots, engagement sessions, drone aerial coverage, and beautifully crafted wedding albums. Serving families across Chirala, Peralal, and all of Andhra Pradesh.",
     url: siteUrl,
     siteName: "Ashwak Photography",
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ashwak Photography | Wedding Photography in Chirala",
-    description: "Chirala's premier wedding photography and videography studio. Capturing timeless moments with artistry, elegance, and passion.",
+    description: "Ashwak Photography is Chirala's premier wedding photography and videography studio with over 11 years of experience. We specialize in candid, traditional, and cinematic wedding photography, pre-wedding shoots, engagement sessions, drone aerial coverage, and beautifully crafted wedding albums.",
     images: ["/images/og-image.png"],
     creator: "@ashwakphotography",
   },
