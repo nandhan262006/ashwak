@@ -175,14 +175,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-cream">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2">{service.title}</h3>
-                    <p className="text-cream/80 text-sm md:text-base leading-relaxed line-clamp-2">
-                      {service.desc}
-                    </p>
-                    <div className="mt-4 flex items-center gap-2 text-gold text-sm font-medium">
-                      <span className="w-6 h-px bg-gold" />
-                      Learn More
-                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold">{service.title}</h3>
                   </div>
                 </div>
               </div>
