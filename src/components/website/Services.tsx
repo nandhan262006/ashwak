@@ -150,7 +150,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
             return (
               <div
                 key={i}
-                className="absolute w-[65%] md:w-[500px] transition-all duration-500 ease-out cursor-grab active:cursor-grabbing"
+                className="absolute w-[80%] md:w-[500px] transition-all duration-500 ease-out cursor-grab active:cursor-grabbing"
                 style={{
                   transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                   opacity: opacity < 0 ? 0 : opacity,
