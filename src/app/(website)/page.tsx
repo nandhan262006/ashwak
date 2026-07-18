@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Ashwak Photography",
     images: [
       {
-        url: "/images/about1.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ashwak Photography - Professional Wedding Photography in Chirala",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Ashwak Photography | Best Wedding Photography in Chirala",
     description:
       "Chirala's premier wedding photography and videography studio. Capturing timeless moments with artistry and emotion.",
-    images: ["/images/about1.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: "/",

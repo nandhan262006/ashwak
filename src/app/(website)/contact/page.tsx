@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Ashwak Photography",
     description: "Get in touch for your wedding photography and videography needs in Chirala. Call +91 63016 58390.",
-    images: ["/images/about1.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: "/contact",

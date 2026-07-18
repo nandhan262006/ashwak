@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Ashwak Photography",
     description: "With over a decade of experience capturing love stories across Chirala and beyond. Wedding photography specialists in candid, traditional, and cinematic styles.",
-    images: ["/images/about1.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: "/about",

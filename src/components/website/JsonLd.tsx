@@ -10,7 +10,7 @@ export default function JsonLd() {
     url: siteUrl,
     telephone: "+916301658390",
     email: "info@ashwakphotography.in",
-    image: `${siteUrl}/images/about1.png`,
+    image: `${siteUrl}/images/og-image.png`,
     logo: `${siteUrl}/images/navibar.png`,
     address: {
       "@type": "PostalAddress",

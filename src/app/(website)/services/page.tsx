@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Services - Ashwak Photography",
     description: "Wedding photography and videography services in Chirala. Candid, traditional, cinematic, pre-wedding, drone coverage, and album design.",
-    images: ["/images/about1.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: "/services",
