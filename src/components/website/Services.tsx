@@ -127,7 +127,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
 
       <div
         ref={containerRef}
-        className="select-none pb-8 relative"
+        className="select-none pb-8 relative overflow-hidden"
         style={{ perspective: "1200px", touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
