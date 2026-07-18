@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { HiLockClosed, HiSparkles } from "react-icons/hi2";
+import { HiLockClosed } from "react-icons/hi2";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [password, setPassword] = useState("");
@@ -44,11 +45,11 @@ export default function LoginPage() {
       <div className="w-full max-w-sm relative">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#B8960E] flex items-center justify-center mb-5 shadow-xl shadow-[#D4AF37]/20">
-            <HiSparkles className="w-8 h-8 text-[#0A0A0A]" />
+          <div className="mb-5">
+            <Image src="/images/navibar.png" alt="Ashwak Photography" width={64} height={64} className="h-16 w-auto mx-auto rounded-2xl shadow-xl shadow-[#D4AF37]/20" />
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">Admin Panel</h1>
-          <p className="text-white/20 text-sm mt-1">Wedding by Kranthi</p>
+          <p className="text-white/20 text-sm mt-1">Ashwak Photography</p>
         </div>
 
         {/* Login card */}

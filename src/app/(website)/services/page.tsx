@@ -4,11 +4,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore our wedding photography and videography services — candid, traditional, cinematic, pre-wedding, drone coverage, and album design in Nellore.",
+  description: "Explore our wedding photography and videography services — candid, traditional, cinematic, pre-wedding, drone coverage, and album design in Chirala.",
   openGraph: {
-    title: "Our Services - Wedding by Kranthi",
-    description: "Wedding photography and videography services in Nellore. Candid, traditional, cinematic, pre-wedding, drone coverage, and album design.",
-    images: ["/images/og-image.webp"],
+    title: "Our Services - Ashwak Photography",
+    description: "Wedding photography and videography services in Chirala. Candid, traditional, cinematic, pre-wedding, drone coverage, and album design.",
+    images: ["/images/about1.png"],
   },
   alternates: {
     canonical: "/services",

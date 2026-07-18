@@ -56,8 +56,10 @@ export default function Services({ initialServices }: { initialServices?: Servic
     ro.observe(el);
 
     const onWheel = (e: WheelEvent) => {
+      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+      if (!isHorizontal) return;
       e.preventDefault();
-      const idx = s.idx + (e.deltaY > 0 ? 1 : -1);
+      const idx = s.idx + (e.deltaX > 0 ? 1 : -1);
       snap(idx);
     };
     el.addEventListener("wheel", onWheel, { passive: false });
@@ -111,7 +113,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
   };
 
   return (
-    <section id="services" className="relative bg-dark-surface overflow-hidden">
+    <section id="services" className="relative bg-dark-surface overflow-hidden z-0">
       <div ref={sectionRef} className="fade-in-up text-center pt-24 pb-8 px-4 max-w-7xl mx-auto">
         <p className="text-gold text-sm uppercase tracking-[0.3em] mb-3">What We Offer</p>
         <h2 className="text-4xl md:text-5xl font-bold">
@@ -125,14 +127,14 @@ export default function Services({ initialServices }: { initialServices?: Servic
 
       <div
         ref={containerRef}
-        className="select-none pb-8"
+        className="select-none pb-8 relative"
         style={{ perspective: "1200px", touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
       >
-        <div className="flex items-center justify-center min-h-[400px] sm:h-[600px] md:h-[700px] relative">
+        <div className="flex items-center justify-center min-h-[350px] sm:h-[600px] md:h-[700px] relative">
           {services.map((service, i) => {
             const diff = i - activeIdx;
             const abs = Math.abs(diff);
@@ -148,7 +150,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
             return (
               <div
                 key={i}
-                className="absolute w-[85%] md:w-[500px] transition-all duration-500 ease-out cursor-grab active:cursor-grabbing"
+                className="absolute w-[65%] md:w-[500px] transition-all duration-500 ease-out cursor-grab active:cursor-grabbing"
                 style={{
                   transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                   opacity: opacity < 0 ? 0 : opacity,
@@ -158,7 +160,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
                 }}
                 onClick={() => !isActive && snap(i)}
               >
-                <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-transparent">
+                <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-transparent">
                   {service.image ? (
                     <Image
                       src={service.image}
@@ -189,7 +191,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
         </div>
       </div>
 
-      <div className="flex justify-between absolute top-1/2 left-2 right-2 sm:left-4 sm:right-4 -translate-y-1/2 pointer-events-none z-10">
+      <div className="hidden sm:flex justify-between absolute top-1/2 left-4 right-4 -translate-y-1/2 pointer-events-none z-10">
         <button
           onClick={() => snap(activeIdx - 1)}
           disabled={activeIdx === 0}

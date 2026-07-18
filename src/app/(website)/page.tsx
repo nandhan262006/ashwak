@@ -2,51 +2,52 @@ import Hero from "@/components/website/Hero";
 import About from "@/components/website/About";
 import Services from "@/components/website/Services";
 import Gallery from "@/components/website/Gallery";
+import FeaturedStories from "@/components/website/FeaturedStories";
 import GoogleReviews from "@/components/website/GoogleReviews";
 import Contact from "@/components/website/Contact";
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Wedding Photography in Nellore | Wedding by Kranthi",
+    title: "Wedding Photography in Chirala | Ashwak Photography",
   description:
-    "Nellore's premier wedding photography and videography studio. Candid, traditional, and cinematic wedding photography. 500+ weddings captured across Andhra Pradesh.",
+    "Chirala's premier wedding photography and videography studio. Candid, traditional, and cinematic wedding photography. 500+ weddings captured across Andhra Pradesh.",
   keywords: [
-    "wedding photography Nellore",
-    "best wedding photographer Nellore",
+    "wedding photography Chirala",
+    "best wedding photographer Chirala",
     "candid wedding photography",
-    "cinematic wedding video Nellore",
-    "pre-wedding shoot Nellore",
+    "cinematic wedding video Chirala",
+    "pre-wedding shoot Chirala",
     "drone wedding coverage Andhra Pradesh",
-    "Wedding by Kranthi",
+    "Ashwak Photography",
     "Indian wedding photography",
-    "wedding album design Nellore",
+    "wedding album design Chirala",
     "Andhra Pradesh wedding photographer",
     "traditional wedding photography",
-    "bridal photography Nellore",
+    "bridal photography Chirala",
   ],
   openGraph: {
-    title: "Wedding by Kranthi | Best Wedding Photography in Nellore",
+    title: "Ashwak Photography | Best Wedding Photography in Chirala",
     description:
-      "Nellore's premier wedding photography and videography studio. Capturing timeless moments with artistry and emotion.",
+      "Chirala's premier wedding photography and videography studio. Capturing timeless moments with artistry and emotion.",
     type: "website",
     locale: "en_IN",
-    siteName: "Wedding by Kranthi",
+    siteName: "Ashwak Photography",
     images: [
       {
-        url: "/images/og-image.webp",
+        url: "/images/about1.png",
         width: 1200,
         height: 630,
-        alt: "Wedding by Kranthi - Professional Wedding Photography in Nellore",
+        alt: "Ashwak Photography - Professional Wedding Photography in Chirala",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wedding by Kranthi | Best Wedding Photography in Nellore",
+    title: "Ashwak Photography | Best Wedding Photography in Chirala",
     description:
-      "Nellore's premier wedding photography and videography studio. Capturing timeless moments with artistry and emotion.",
-    images: ["/images/og-image.webp"],
+      "Chirala's premier wedding photography and videography studio. Capturing timeless moments with artistry and emotion.",
+    images: ["/images/about1.png"],
   },
   alternates: {
     canonical: "/",
@@ -98,6 +99,7 @@ export default async function HomePage() {
       <About data={about} />
       <Services initialServices={services ?? undefined} />
       <Gallery initialImages={gallery ?? undefined} />
+      <FeaturedStories />
       <GoogleReviews />
       <Contact />
     </>

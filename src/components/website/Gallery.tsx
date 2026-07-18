@@ -2,18 +2,18 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useScrollReveal } from "./useScrollReveal";
 
 const defaultGalleryItems = [
-  { src: "/images/unnamed.webp", caption: "Wedding Moments" },
-  { src: "/images/unnamed (1).webp", caption: "Beautiful Portraits" },
-  { src: "/images/unnamed (2).webp", caption: "Celebrations" },
-  { src: "/images/unnamed (3).webp", caption: "Traditional Ceremony" },
-  { src: "/images/unnamed (4).webp", caption: "Joyful Moments" },
-  { src: "/images/unnamed (5).webp", caption: "Elegant Details" },
-  { src: "/images/unnamed (6).webp", caption: "Love Story" },
-  { src: "/images/unnamed (7).webp", caption: "Grand Celebrations" },
-  { src: "/images/unnamed (8).webp", caption: "Timeless Memories" },
+  { src: "/images/GALLERY1.png", caption: "Gallery 1" },
+  { src: "/images/GALLERY2.png", caption: "Gallery 2" },
+  { src: "/images/GALLERY3.png", caption: "Gallery 3" },
+  { src: "/images/GALLERY4.png", caption: "Gallery 4" },
+  { src: "/images/GALLERY5.png", caption: "Gallery 5" },
+  { src: "/images/GALLERY6.png", caption: "Gallery 6" },
+  { src: "/images/GALLERY7.png", caption: "Gallery 7" },
+  { src: "/images/GALLERY8.png", caption: "Gallery 8" },
 ];
 
 interface GalleryImageItem {
@@ -62,18 +62,19 @@ export default function Gallery({ initialImages }: { initialImages?: GalleryImag
           <div className="w-16 h-px bg-gold mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-0">
           {galleryItems.map((item, i) => (
             <div
               key={i}
-              className="relative overflow-hidden group cursor-pointer aspect-square"
+              className="relative overflow-hidden group cursor-pointer"
               onClick={() => setLightbox(i)}
             >
               <Image
                 src={item.src}
                 alt={item.caption}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -83,6 +84,15 @@ export default function Gallery({ initialImages }: { initialImages?: GalleryImag
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/gallery"
+            className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#B8960E] text-[#0A0A0A] px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-all duration-300 text-sm font-semibold"
+          >
+            View Full Gallery
+          </Link>
         </div>
 
       </div>

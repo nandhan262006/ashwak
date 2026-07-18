@@ -4,11 +4,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, pre-wedding shoots, and cinematic highlights from Nellore.",
+  description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, pre-wedding shoots, and cinematic highlights from Chirala.",
   openGraph: {
-    title: "Gallery - Wedding by Kranthi",
-    description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, and cinematic highlights from Nellore.",
-    images: ["/images/og-image.webp"],
+    title: "Gallery - Ashwak Photography",
+    description: "Browse our stunning wedding photography gallery. Candid moments, grand celebrations, and cinematic highlights from Chirala.",
+    images: ["/images/about1.png"],
   },
   alternates: {
     canonical: "/gallery",

@@ -2,8 +2,9 @@
 
 import { useEffect, useCallback, useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { HiHome, HiBriefcase, HiPhoto, HiStar, HiUser, HiEnvelope, HiCog6Tooth, HiArrowRightOnRectangle, HiBars3, HiXMark, HiSparkles } from "react-icons/hi2";
+import { HiHome, HiBriefcase, HiPhoto, HiStar, HiUser, HiEnvelope, HiCog6Tooth, HiArrowRightOnRectangle, HiBars3, HiXMark } from "react-icons/hi2";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: HiHome },
@@ -56,8 +57,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const didVerify = useRef(false);
 
   useEffect(() => {
-    if (pathname === "/admin/login" || didVerify.current) return;
-    didVerify.current = true;
+    if (pathname === "/admin/login") {
+      setVerified(true);
+      return;
+    }
+    didVerify.current = false;
+    setVerified(false);
     fetch("/api/auth/verify")
       .then((r) => r.json())
       .then((data) => {
@@ -82,9 +87,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <SidebarSkeleton />
         <div className="flex-1 flex flex-col items-center justify-center gap-4">
           <div className="relative">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#B8960E] flex items-center justify-center animate-pulse">
-              <HiSparkles className="w-6 h-6 text-[#0A0A0A]" />
-            </div>
+            <Image src="/images/navibar.png" alt="Ashwak Photography" width={48} height={48} className="h-12 w-auto rounded-2xl animate-pulse" />
           </div>
           <p className="text-white/40 text-sm font-medium">Loading admin panel...</p>
         </div>
@@ -117,11 +120,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-white/[0.06]">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8960E] flex items-center justify-center shadow-lg shadow-[#D4AF37]/20">
-            <span className="text-[#0A0A0A] font-bold text-lg">K</span>
-          </div>
+          <Image src="/images/navibar.png" alt="Ashwak Photography" width={40} height={40} className="h-10 w-auto rounded-lg" />
           <div>
-            <h1 className="text-white font-semibold text-sm leading-tight">Wedding by Kranthi</h1>
+            <h1 className="text-white font-semibold text-sm leading-tight">Ashwak Photography</h1>
             <p className="text-white/30 text-xs font-medium">Admin Panel</p>
           </div>
           <button

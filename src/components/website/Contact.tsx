@@ -64,8 +64,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-cream/50 text-xs uppercase tracking-wider mb-0.5">Phone</div>
-                    <a href="tel:+919885947958" className="text-cream hover:text-gold transition-colors">
-                      +91 98859 47958
+                    <a href="tel:+916301658390" className="text-cream hover:text-gold transition-colors">
+                      +91 63016 58390
                     </a>
                   </div>
                 </div>
@@ -79,8 +79,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-cream/50 text-xs uppercase tracking-wider mb-0.5">Email</div>
-                    <a href="mailto:info@kranthiphotography.in" className="text-cream hover:text-gold transition-colors">
-                      info@kranthiphotography.in
+                    <a href="mailto:info@ashwakphotography.in" className="text-cream hover:text-gold transition-colors">
+                      info@ashwakphotography.in
                     </a>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-cream/50 text-xs uppercase tracking-wider mb-0.5">Location</div>
-                    <span className="text-cream">Nellore, India</span>
+                    <span className="text-cream">Peralal, Chirala</span>
                   </div>
                 </div>
 
@@ -209,17 +209,24 @@ export default function Contact() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="border border-gold/10 overflow-hidden">
+        <div className="relative border border-gold/10 overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.3!2d79.9742742!3d14.4368667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4cf38b9e5513c9%3A0xe7ac6ec646497a58!2sWeddings%20by%20kranthi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=15.8325368,80.3616267&z=17&output=embed"
             width="100%"
             height="350"
             style={{ border: 0, filter: "grayscale(0.6) contrast(1.1) sepia(0.3)" }}
-            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Wedding by Kranthi Location"
+            title="Ashwak Photography Location"
           />
+          <a
+            href="https://maps.app.goo.gl/H91ET7VzCjv4rLbC7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-3 right-3 bg-[#D4AF37] hover:bg-[#C4A030] text-[#0A0A0A] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg transition-colors"
+          >
+            Open in Maps
+          </a>
         </div>
       </div>
     </section>

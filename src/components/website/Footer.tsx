@@ -28,14 +28,14 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Image
               src="/images/navibar.png"
-              alt="Wedding by Kranthi"
+              alt="Ashwak Photography"
               width={160}
               height={40}
               className="h-9 w-auto mb-5"
             />
             <p className="text-white/30 leading-relaxed text-sm max-w-sm">
               Capturing timeless moments with artistry, elegance, and passion.
-              Nellore&apos;s premier wedding photography and videography studio since 2015.
+              Chirala&apos;s premier wedding photography and videography studio since 2015.
             </p>
           </div>
 
@@ -72,10 +72,10 @@ export default function Footer() {
       <div className="border-t border-white/[0.04] py-6">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/15 text-xs">
-            &copy; {new Date().getFullYear()} Wedding by Kranthi. All rights reserved.
+            &copy; {new Date().getFullYear()} Ashwak Photography. All rights reserved.
           </p>
           <p className="text-white/10 text-xs">
-            Made with passion in Nellore, Andhra Pradesh
+            Made with passion in Chirala, Andhra Pradesh
           </p>
         </div>
       </div>

@@ -11,13 +11,13 @@ interface Review {
 }
 
 const defaultReviews: Review[] = [
-  { name: "Priya & Rahul", rating: 5, text: "Kranthi captured our wedding beautifully. Every photo tells a story. The candid shots were absolutely stunning!", date: "December 2025" },
-  { name: "Ananya & Vikram", rating: 5, text: "Best wedding photographer in Nellore! The cinematic video was beyond our expectations. Highly recommend!", date: "November 2025" },
-  { name: "Meera & Arjun", rating: 5, text: "The pre-wedding shoot was magical. Kranthi has an incredible eye for detail and makes you feel so comfortable.", date: "October 2025" },
+  { name: "Priya & Rahul", rating: 5, text: "Ashwak captured our wedding beautifully. Every photo tells a story. The candid shots were absolutely stunning!", date: "December 2025" },
+  { name: "Ananya & Vikram", rating: 5, text: "Best wedding photographer in Chirala! The cinematic video was beyond our expectations. Highly recommend!", date: "November 2025" },
+  { name: "Meera & Arjun", rating: 5, text: "The pre-wedding shoot was magical. Ashwak has an incredible eye for detail and makes you feel so comfortable.", date: "October 2025" },
   { name: "Divya & Sanjay", rating: 5, text: "From candid moments to grand portraits, every frame was perfect. The drone shots added a whole new dimension!", date: "September 2025" },
-  { name: "Lakshmi & Ravi", rating: 5, text: "Our wedding album is absolutely gorgeous. Kranthi truly knows how to capture emotions and beautiful moments.", date: "August 2025" },
+  { name: "Lakshmi & Ravi", rating: 5, text: "Our wedding album is absolutely gorgeous. Ashwak truly knows how to capture emotions and beautiful moments.", date: "August 2025" },
   { name: "Swathi & Kiran", rating: 5, text: "Professional, creative, and passionate. The reception coverage was fantastic. We love every single photo!", date: "July 2025" },
-  { name: "Nisha & Karthik", rating: 5, text: "The engagement shoot was so much fun! Kranthi made us feel like models. Beautiful timeless photos.", date: "June 2025" },
+  { name: "Nisha & Karthik", rating: 5, text: "The engagement shoot was so much fun! Ashwak made us feel like models. Beautiful timeless photos.", date: "June 2025" },
   { name: "Revathi & Suresh", rating: 5, text: "Incredible service from start to finish. The traditional ceremony coverage was breathtaking. Worth every rupee!", date: "May 2025" },
 ];
 

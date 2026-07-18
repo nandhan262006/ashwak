@@ -5,11 +5,11 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "With over a decade of experience capturing love stories across Nellore and beyond, Wedding by Kranthi brings artistry and emotion to every frame.",
+  description: "With over a decade of experience capturing love stories across Chirala and beyond, Ashwak Photography brings artistry and emotion to every frame.",
   openGraph: {
-    title: "About Wedding by Kranthi",
-    description: "With over a decade of experience capturing love stories across Nellore and beyond. Wedding photography specialists in candid, traditional, and cinematic styles.",
-    images: ["/images/og-image.webp"],
+    title: "About Ashwak Photography",
+    description: "With over a decade of experience capturing love stories across Chirala and beyond. Wedding photography specialists in candid, traditional, and cinematic styles.",
+    images: ["/images/about1.png"],
   },
   alternates: {
     canonical: "/about",
@@ -31,8 +31,8 @@ export default async function AboutPage() {
     <main className="min-h-screen bg-dark pt-24">
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         <Image
-          src="/images/unnamed (8).webp"
-          alt="Wedding by Kranthi studio"
+          src="/images/ABOUT.png"
+          alt="Ashwak Photography studio"
           fill
           className="object-cover"
           priority
@@ -118,7 +118,7 @@ export default async function AboutPage() {
 
           <div className="max-w-2xl mx-auto space-y-8">
             {[
-              { year: "2014", title: "Started from Nellore", desc: "Began photographing weddings with a passion for storytelling and a keen eye for detail." },
+              { year: "2014", title: "Started from Chirala", desc: "Began photographing weddings with a passion for storytelling and a keen eye for detail." },
               { year: "2017", title: "Expanded to Videography", desc: "Added cinematic videography to capture not just moments, but entire love stories in motion." },
               { year: "2020", title: "Drone Coverage Added", desc: "Introduced aerial photography to bring grand perspectives to wedding celebrations." },
               { year: "2024", title: "500+ Weddings", desc: "Reached the milestone of capturing over 500 beautiful weddings across Andhra Pradesh." },
