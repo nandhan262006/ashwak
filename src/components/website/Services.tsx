@@ -127,7 +127,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
 
       <div
         ref={containerRef}
-        className="select-none pb-8 relative overflow-hidden"
+        className="select-none pb-8 relative"
         style={{ perspective: "1200px", touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -150,7 +150,7 @@ export default function Services({ initialServices }: { initialServices?: Servic
             return (
               <div
                 key={i}
-                className="absolute w-[80%] md:w-[500px] transition-all duration-500 ease-out cursor-grab active:cursor-grabbing"
+                className="absolute w-[65%] md:w-[500px] transition-all duration-500 ease-out cursor-grab active:cursor-grabbing"
                 style={{
                   transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                   opacity: opacity < 0 ? 0 : opacity,
@@ -175,7 +175,14 @@ export default function Services({ initialServices }: { initialServices?: Servic
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-cream">
-                    <h3 className="text-2xl md:text-3xl font-bold">{service.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">{service.title}</h3>
+                    <p className="text-cream/80 text-sm md:text-base leading-relaxed line-clamp-2">
+                      {service.desc}
+                    </p>
+                    <div className="mt-4 flex items-center gap-2 text-gold text-sm font-medium">
+                      <span className="w-6 h-px bg-gold" />
+                      Learn More
+                    </div>
                   </div>
                 </div>
               </div>
