@@ -41,7 +41,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent" />
 
-      <div className="relative w-full pb-16 md:pb-12">
+      <div className="relative w-full pb-32 md:pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-4">
             <Link
